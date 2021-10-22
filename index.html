@@ -20,53 +20,57 @@
           <img src="images/me.jpg" alt="Foto pessoal" />
         </div>
 
-        <h1>Matheus Henrique</h1>
-        <a href="https://instagram.com/mathsmeireles">
-          <img src="images/github.svg" alt="ícone github" target="_blank" />
+        <h1 id="userName">Matheus Henrique</h1>
+        <a href="https://github.com.com/mathsmeireles" target="_blank">
+          <img src="images/github.svg" alt="ícone github" />
           mathsmeireles
         </a>
 
-        <p>An instructor focused on helping pople start programming for web</p>
+        <p>An instructor focused on helping people start programming for web</p>
 
-        <ul>
-          <li>
-            <a href="https://youtube.com/">
-              <img
-                src="images/youtube.svg"
-                alt="ícone youtube"
-                target="_blank"
-              />
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com/maykbrito" target="_blank">
+              <img src="images/youtube.svg" alt="ícone youtube" />
             </a>
           </li>
-          <li>
-            <a href="https://instagram.com/mathsmeireles">
-              <img
-                src="images/instagram.svg"
-                alt="ícone instagram"
-                target="_blank"
-              />
+          <li class="instagram">
+            <a href="https://instagram.com/maykbrito" target="_blank">
+              <img src="images/instagram.svg" alt="ícone instagram" />
             </a>
           </li>
-          <li>
-            <a href="https://facebook.com/">
-              <img
-                src="images/facebook.svg"
-                alt="ícone facebook"
-                target="_blank"
-              />
+          <li class="facebook">
+            <a href="https://facebook.com/maykbrito" target="_blank">
+              <img src="images/facebook.svg" alt="ícone facebook" />
             </a>
           </li>
-          <li>
-            <a href="https://twitter.com/mathsmeireles">
-              <img
-                src="images/twitter.svg"
-                alt="ícone twitter"
-                target="_blank"
-              />
+          <li class="twitter">
+            <a href="https://twitter.com/maykbrito" target="_blank">
+              <img src="images/twitter.svg" alt="ícone twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+
+    <script>
+      const linksSocialMedia = {
+        github: 'mathsmeireles',
+        youtube: '',
+        facebook: '',
+        instagram: 'mathsmeireles',
+        twitter: 'mathsmeireles'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
